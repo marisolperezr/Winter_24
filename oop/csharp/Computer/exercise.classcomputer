@@ -1,0 +1,63 @@
+
+/******************************************************************************
+
+MarC-a Soledad PC)rez Ruiz
+
+Ejercicio 6.
+
+*******************************************************************************/
+using System;
+//namespace OOP_in_Csharp{   //cambiar el nombre al que queramos
+public class Computer{
+    
+    //Atributos
+    public string BiosName{
+        get;
+        set;
+    }
+    
+    public string IpAddress{
+        get;
+        set;
+    }
+    //Constructor
+    
+    public Computer(string biosName, string ipAddress){
+        BiosName = biosName;
+        IpAddress = ipAddress;
+        
+    }
+    
+    //constructor por defecto
+    
+    public Computer(){
+        
+    }
+    
+    public void ShowInfo(){
+        Console.WriteLine($"BiosName: {BiosName}, IpAddress: {IpAddress}");
+    }
+}
+
+public class Program {
+    public static void Main(){
+        
+        //creación de objetos de la clase Computer con el constructor por paramtros
+        
+        Computer computer1 = new Computer ("Bios-Computer1", "192.168.1.1");
+        Computer computer2 = new Computer ("Bios-Computer2", "192.168.1.2");
+        
+        //creacion de objetos con constructor por defecto
+        
+       // Computer comp01 = new Computer(){
+         //   comp01.BiosName = "alfa";
+           // comp01.IpAddress = "10.0.0.4";
+        //}
+        
+       // Console.WriteLine(comp01.BiosName + "-" + comp01.IpAddress + "-");
+        //Mostrar ShowInfo
+        
+        computer1.ShowInfo();
+        computer2.ShowInfo();
+    }
+}

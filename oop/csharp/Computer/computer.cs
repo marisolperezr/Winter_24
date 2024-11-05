@@ -56,7 +56,6 @@ public class Computer
         Console.WriteLine($"BiosName: {BiosName}, IpAddress: {IpAddress}");
     }
 }
-
 public class Program
 {
     static Random random = new Random();            // Move Random out of the method to avoid creating multiple instances
@@ -79,6 +78,25 @@ public class Program
 
         return num.ToString();                      // Returns the selected number as a string
     }
+
+
+    static Computer[] net;
+    public static void Ping(string ipAddress, Computer[]net) {
+        bool encontrado = false;
+        for (int i = 0; i < net.Length; i++) {
+            if (ipAddress == net[i].IpAddress) {
+                encontrado = true; 
+                Console.WriteLine(" bytes=32 tiempo<1ms TTL=64");
+                break;
+            }
+        }
+
+        if (encontrado == false) { 
+            Console.WriteLine("Tiempo de espera agotado.");
+        }
+    }
+
+
 
     public static void Main()  
     {
@@ -106,7 +124,7 @@ public class Program
         string newip = "10.0." + getNum() + "." + getNum(); // generate an IP using getNum()
         comp01.StartComputer(newip);
         comp01.ShutDown(newip);
-        
+
         Console.WriteLine(comp01.BiosName + " - " + comp01.IpAddress);
         Console.WriteLine("We have {0} computers!!", Computer.getCompNum());
 
@@ -115,5 +133,12 @@ public class Program
         computer1.ShowInfo();
         computer2.ShowInfo();
         comp01.ShowInfo();
+        
+        Console.WriteLine("Introduce the IP Address:");
+        string testIp = Console.ReadLine();
+        Ping(testIp, net);                                 
+
+
     }
 }
+

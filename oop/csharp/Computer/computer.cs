@@ -43,6 +43,15 @@ public class Computer
     public static int getCompNum() {
         return counter;
     } 
+
+    public void StartComputer(string ip) {
+       IpAddress = ip;
+    }
+    public void ShutDown(string ip) {
+        IpAddress = ip;
+        IpAddress = null;
+
+    }
     public void ShowInfo() {
         Console.WriteLine($"BiosName: {BiosName}, IpAddress: {IpAddress}");
     }
@@ -59,14 +68,14 @@ public class Program
 
     static string getNum() {                        // Static method to generate random numbers
         if (UsedNumbers.Count == 0) {
-            for (int i = 1; i <= 254; i++) {        // At first, mi list is empty so I fill it with all the values between 0 and 255
+            for (int i = 1; i <= 254; i++) {        // At first, my list is empty so I fill it with all the values between 1 and 254
                 UsedNumbers.Add(i);
             }
         }
 
-        int index = random.Next(UsedNumbers.Count); // UsedNumbers count is the total number of numbers I have in my list UsedNumbers. So I generate a random number with random.next between 0 and 254,  in this case
+        int index = random.Next(UsedNumbers.Count); // UsedNumbers count is the total number of numbers I have in my list UsedNumbers. So I generate a random number with random.next between 0 and the count of UsedNumbers
         int num = UsedNumbers[index];               // When I have the number, for example, if it is 3 we would have int num=UsedNumbers[3] and the number would be the one on the third position
-        UsedNumbers.RemoveAt(index);                // I erase the selected number so itś no longer available
+        UsedNumbers.RemoveAt(index);                // I erase the selected number so it’s no longer available
 
         return num.ToString();                      // Returns the selected number as a string
     }
@@ -91,12 +100,15 @@ public class Program
 
         Computer comp01 = new Computer();
         comp01.BiosName = "alfa";
-        comp01.IpAddress = "10.0." + getNum() + "." + getNum();
 
+        // If I use the method StartComputer to get the Ip Address
+
+        string newip = "10.0." + getNum() + "." + getNum(); // generate an IP using getNum()
+        comp01.StartComputer(newip);
+        comp01.ShutDown(newip);
+        
         Console.WriteLine(comp01.BiosName + " - " + comp01.IpAddress);
         Console.WriteLine("We have {0} computers!!", Computer.getCompNum());
-
-        
 
         // Show ShowInfo
 
@@ -105,15 +117,3 @@ public class Program
         comp01.ShowInfo();
     }
 }
-
-
-// teacher's version
-// static void Main()
-// int comNum = 50;
-// string[] ipadr = new String [compNum];
-//for (int i=0; i< compNum ; i++){
-// ipadr[i] = "10.0.0.0" + (i+1).ToString();
-//Console.WriteLine(ipadr[i]);
-//}
-//}
-//}

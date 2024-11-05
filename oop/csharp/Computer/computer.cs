@@ -4,13 +4,13 @@ Maria Soledad Perez Ruiz
 
 *******************************************************************************/
 
-//prueba
+
 using System;
 
 //namespace OOP_in_Csharp{   //cambiar el nombre al que queramos
 public class Computer
 {
-    // Atributos
+    // Atributes
     private string biosName; 
     private string ipAddress; 
 
@@ -42,7 +42,7 @@ public class Computer
         counter ++;
     }
 
-    // Constructor por defecto
+    // Default constructor
     public Computer() {
         counter++;
     }
@@ -57,15 +57,15 @@ public class Computer
 
 public class Program
 {
-    static Random random = new Random(); // Mover Random fuera del método para evitar crear múltiples instancias
+    static Random random = new Random(); // Move Random out of the methor to avoid creating multiple instances
 
-    static string getNum()              // Método estático para generar números aleatorios
+    static string getNum()              // Static method to generate random numbers
     {
-        int num = random.Next(1, 255);  // Genera un número entre min (inclusive) y max (exclusivo)
+        int num = random.Next(1, 255);  // Generates a number between min (inclusive) and  max (exclusive)
         return num.ToString();
     }
 
-    public static void Main()           // Método principal debe ser estático
+    public static void Main()  
     {
         Computer[] net = new Computer[4];
         for (int i = 0; i < net.Length; i++)
@@ -78,12 +78,12 @@ public class Program
             Console.WriteLine("{0} --- {1}", net[i].BiosName, net[i].IpAddress);
         }
 
-        // Creación de objetos de la clase Computer con el constructor por parámetros
+        // Creating objects using parameter constructor
 
         Computer computer1 = new Computer("Bios-Computer1", "192.168.1.1");
         Computer computer2 = new Computer("Bios-Computer2", "192.168.1.2");
 
-        // Creación de objetos con constructor por defecto
+        // Creating objects using default constructor
 
         Computer comp01 = new Computer();
         comp01.BiosName = "alfa";
@@ -92,7 +92,7 @@ public class Program
         Console.WriteLine(comp01.BiosName + " - " + comp01.IpAddress);
         Console.WriteLine("We have {0} computers!!", Computer.getCompNum());
 
-        // Mostrar ShowInfo
+        // Show ShowInfo
         
         computer1.ShowInfo();
         computer2.ShowInfo();

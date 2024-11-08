@@ -6,7 +6,6 @@ public class Computer
     // Attributes
     private string biosName; 
     private string ipAddress; 
-
     private static int counter = 0;
 
     public string BiosName {
@@ -47,8 +46,7 @@ public class Computer
     public void StartComputer(string ip) {
        IpAddress = ip;
     }
-    public void ShutDown(string ip) {
-        IpAddress = ip;
+    public void ShutDown() {
         IpAddress = null;
 
     }
@@ -56,14 +54,9 @@ public class Computer
         Console.WriteLine($"BiosName: {BiosName}, IpAddress: {IpAddress}");
     }
 }
-public class Program
-{
+public class Program{
     static Random random = new Random();            // Move Random out of the method to avoid creating multiple instances
-
-    // How to be sure no number is ever repeated
-
-    // Create a list of already used numbers
-    static List<int> UsedNumbers = new List<int>();
+    static List<int> UsedNumbers = new List<int>(); // Create a list of already used numbers
 
     static string getNum() {                        // Static method to generate random numbers
         if (UsedNumbers.Count == 0) {
@@ -80,65 +73,120 @@ public class Program
     }
 
 
-    static Computer[] net;
-    public static void Ping(string ipAddress, Computer[]net) {
+    // static Computer[] net; 
+
+    static List<Computer> network = new List<Computer>();
+    public static void Ping(string ipAddress) {
         bool encontrado = false;
-        for (int i = 0; i < net.Length; i++) {
-            if (ipAddress == net[i].IpAddress) {
+        foreach (var computer in network) {        
+            if (ipAddress == computer.IpAddress) {
                 encontrado = true; 
-                Console.WriteLine(" bytes=32 tiempo<1ms TTL=64");
+                Console.WriteLine(" bytes=32 time<1ms TTL=64");
                 break;
             }
         }
-
         if (encontrado == false) { 
-            Console.WriteLine("Tiempo de espera agotado.");
+            Console.WriteLine("Time gone");
         }
     }
 
+    public static void StartServer(){
+        Console.WriteLine("This method is not available yet");
+    }
 
-
-    public static void Main()  
-    {
-        Computer[] net = new Computer[4];
-        for (int i = 0; i < net.Length; i++) {
-            net[i] = new Computer("comp" + i.ToString(), "10.0." + getNum() + "." + getNum());
+    public static void StartComputers(int count){
+        for(int i=0; i<count; i++){
+            network.Add(new Computer("comp" + i.ToString(), "10.0.192."+getNum()));
         }
+        Console.WriteLine($"{count} Computers added ");
+    }
 
-        for (int i = 0; i < net.Length; i++) {
-            Console.WriteLine("{0} --- {1}", net[i].BiosName, net[i].IpAddress);
+    public static void DisplayComputers (){
+        foreach ( var computer in network){
+            computer.ShowInfo();
+        } 
+    }
+
+    public static void ShutDownComputer(string ipAddress ){
+        bool found = false;
+        foreach ( var computer in network){
+            if (computer.IpAddress == ipAddress){
+                computer.ShutDown();
+                Console.WriteLine($"Computer {ipAddress} shutted down ");
+                found = true;
+                break;
+            }
         }
-
-        // Creating objects using parameter constructor
-
-        Computer computer1 = new Computer("Bios-Computer1", "192.168.1.1");
-        Computer computer2 = new Computer("Bios-Computer2", "192.168.1.2");
-
-        // Creating objects using default constructor
-
-        Computer comp01 = new Computer();
-        comp01.BiosName = "alfa";
-
-        // If I use the method StartComputer to get the Ip Address
-
-        string newip = "10.0." + getNum() + "." + getNum(); // generate an IP using getNum()
-        comp01.StartComputer(newip);
-        comp01.ShutDown(newip);
-
-        Console.WriteLine(comp01.BiosName + " - " + comp01.IpAddress);
-        Console.WriteLine("We have {0} computers!!", Computer.getCompNum());
-
-        // Show ShowInfo
-
-        computer1.ShowInfo();
-        computer2.ShowInfo();
-        comp01.ShowInfo();
-        
-        Console.WriteLine("Introduce the IP Address:");
-        string testIp = Console.ReadLine();
-        Ping(testIp, net);                                 
-
+            if (!found){
+                Console.WriteLine("Could not find the computer");
+            }
 
     }
+    public static void ShutDownAllComputers(){
+        foreach ( var computer in network){
+            computer.ShutDown();
+        }
+        Console.WriteLine("All computers have been shutted down.");
+    }
+    public static void SeeLog(){
+        Console.WriteLine("This method is not available yet");
+    }
+    public static void ShutDownServer(){
+        Console.WriteLine("This method is not available yet");
+    }
+    public static void Main(){
+    
+    bool on = true;
+    while(on){
+        Console.WriteLine("Program Menu:");
+        Console.WriteLine("1.Start Server");
+        Console.WriteLine("2.Start Computers");
+        Console.WriteLine("3.Display Computers");
+        Console.WriteLine("4.Shut down computer");
+        Console.WriteLine("5.Shut down all computers");
+        Console.WriteLine("6.See the log");
+        Console.WriteLine("7.Shut down server");
+        Console.WriteLine("8.Quit");
+        Console.WriteLine("Select an option:");
+
+        string options = Console.ReadLine();
+
+        switch (options){
+            case "1":
+                StartServer();
+                break;
+            case "2":
+                Console.WriteLine("How many computers do you want to start?");
+                 if (int.TryParse(Console.ReadLine(), out int count)) {
+                        StartComputers(count);
+                    }
+                break;
+            case "3":
+                DisplayComputers();
+                break;
+            case "4":
+                Console.WriteLine("Which computer do you want to shut down?");
+                string ipAddress = Console.ReadLine();
+                ShutDownComputer(ipAddress);
+                break;
+            case "5":
+                ShutDownAllComputers();
+                break;
+            case "6":
+                SeeLog();
+                break;
+            case "7":
+                ShutDownServer();
+                break;
+            case "8":
+                on = false;
+                Console.WriteLine ("Bye!");
+                break;
+            default: 
+                Console.WriteLine("Invalid option.Try again");
+                break;            
+        }
+    }
+ }
+
 }
-

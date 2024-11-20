@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;                   // Included this for List<int> 
-
+using compLibs;
 public class Computer
 {
     // Attributes
@@ -54,10 +54,11 @@ public class Computer
         Console.WriteLine($"BiosName: {BiosName}, IpAddress: {IpAddress}");
     }
 }
+
 public class Program{
     static Random random = new Random();            // Move Random out of the method to avoid creating multiple instances
     static List<int> UsedNumbers = new List<int>(); // Create a list of already used numbers
-
+   
     static string getNum() {                        // Static method to generate random numbers
         if (UsedNumbers.Count == 0) {
             for (int i = 1; i <= 254; i++) {        // At first, my list is empty so I fill it with all the values between 1 and 254
@@ -91,10 +92,24 @@ public class Program{
     }
 
     public static void StartServer(){
-        Console.WriteLine("This method is not available yet");
+
+        Console.WriteLine("Enter the Serverś BiosName");
+        string biosName = Console.ReadLine();
+
+        Console.WriteLine("Enter the Server's IP address");
+        string ipAddress = "10.0.192."+getNum();
+
+        Console.WriteLine("Enter the Server type");
+        string type = Console.ReadLine();
+
+        Server server = new Server (biosName,ipAddress,type);                           //new server object
+
+        network.Add(server);
+
+        Console.WriteLine($"Server {biosName} with IP {ipAddress} started");
     }
 
-    public static void StartComputers(int count){
+    public virtual void StartComputers(int count){
         for(int i=0; i<count; i++){
             network.Add(new Computer("comp" + i.ToString(), "10.0.192."+getNum()));
         }
@@ -131,8 +146,19 @@ public class Program{
     public static void SeeLog(){
         Console.WriteLine("This method is not available yet");
     }
-    public static void ShutDownServer(){
-        Console.WriteLine("This method is not available yet");
+    public static void ShutDownServer(string ipAddress){
+        bool found2 = false;
+        foreach ( var server in network ){
+            if ( Computer is Server && Computer.IpAddress == ipAddress){
+                ((Server)computer).ShutDown();
+                Console.WriteLine($"Server {biosName} with IP {ipAddress} has been shutted down");
+                found2 = true;
+                break;
+            }
+        }
+        if (!found2){
+            Console.WriteLine("Could not find the server");
+        }
     }
     public static void Main(){
     
@@ -176,7 +202,9 @@ public class Program{
                 SeeLog();
                 break;
             case "7":
-                ShutDownServer();
+                Console.WriteLine("Which server do you want to shut down?");
+                ipAddress = Console.ReadLine();
+                ShutDownServer(ipAddress);
                 break;
             case "8":
                 on = false;

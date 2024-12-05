@@ -1,0 +1,21 @@
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.246, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.195, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.158, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp3, IpAddress: 10.0.192.31, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp4, IpAddress: 10.0.192.40, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp5, IpAddress: 10.0.192.68, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp6, IpAddress: 10.0.192.231, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp7, IpAddress: 10.0.192.141, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp8, IpAddress: 10.0.192.85, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp9, IpAddress: 10.0.192.236, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp10, IpAddress: 10.0.192.171, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp11, IpAddress: 10.0.192.36, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp12, IpAddress: 10.0.192.151, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp13, IpAddress: 10.0.192.62, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp14, IpAddress: 10.0.192.163, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp15, IpAddress: 10.0.192.71, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp16, IpAddress: 10.0.192.167, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp17, IpAddress: 10.0.192.178, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp18, IpAddress: 10.0.192.232, Time: 12/4/2024 2:38:08 PM
+[Computer Started]: BiosName: comp19, IpAddress: 10.0.192.173, Time: 12/4/2024 2:38:08 PM
+[Program Terminated]: 12/4/2024 2:38:10 PM

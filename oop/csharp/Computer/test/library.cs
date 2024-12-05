@@ -3,21 +3,29 @@ using System.Collections.Generic;
 
 namespace compLibs
 {
-    public abstract class Device
+    public abstract class Device                        //interface IDevice{
+                                                        // void StartDevice();
+                                                        //void ShutDown() ;
+                                                        //}
     {
 
         protected string _name;
+
+//Constructor to initialize the device's name
 
         public Device(string name)
         {
             _name = name;
         }
+//Abstract methods to be implemented by derived class
 
-        public abstract void StartDevice();
-        public abstract void ShutDown();
+        public abstract void StartDevice();             // public virtual void StartDevice()
+        public abstract void ShutDown();                // public virtual void ShutDown()
     }
 
-    public class Computer : Device
+//Computer class is derived from the Device class
+
+    public  class Computer : Device
     {
         
         private string biosName;
@@ -38,18 +46,21 @@ namespace compLibs
         }
 
         // Constructor
-        public Computer(string name, string biosName,string ipAddress) : base(name)
+        public Computer(string name, string biosname,string ipAddress)  : base(name)      
         {
             BiosName = biosName;
             IpAddress = ipAddress;
             counter++;
         }
 
-        // Constructor default
+// Deafault constructor for a computer with an "Unkown" name
+
         public Computer() : base("Unknown")
         {
             counter++;
         }
+
+//To get the number of computers created
 
         public static int GetCompNum()
         {
@@ -64,10 +75,16 @@ namespace compLibs
         public override void ShutDown()
         {
             IpAddress = null;
+            Console.WriteLine("**************** !!!! **************");
+            Console.WriteLine("Are you sure you want to shut down this server? (YES/n)");
+            string confirm = Console.ReadLine();
+            if (confirm == "YES"){
+                Console.WriteLine("The comp {0} is shutting down !!!", this._name);
+            }
             Console.WriteLine("Device shut down.");
         }
 
-        public void ShowInfo()
+        public virtual void ShowInfo()
         {
             Console.WriteLine($"Name: {_name}, BiosName: {BiosName}, IpAddress: {IpAddress}");
         }

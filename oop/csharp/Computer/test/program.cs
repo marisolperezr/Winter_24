@@ -2,14 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using compLibs;
+using compLibs.Servers;
 
 
 public class Program {
-    static Random random = new Random(); 
-    static List<int> UsedNumbers = new List<int>(); 
-    static StreamWriter log;                                    // Declaration of log 
+    static Random random = new Random();
+    static List<int> UsedNumbers = new List<int>();
+    static StreamWriter log;                                    // Declaration of log
     static List<Computer> network = new List<Computer>();
 
+    //How teacher creates new servers                                                                            
+
+    //Server zero = new Server ("zero", "192.34.0.0","Web Server");
+    //Server omega = new Server ("omega", "192.34.1.0","DHCP");
 
     static string getNum() {
         if (UsedNumbers.Count == 0) {
@@ -25,30 +30,49 @@ public class Program {
         return num.ToString();
     }
 
+//Logs the start of the server and displays a message
 
     public static void StartServer() {
         log.WriteLine($"[Server Started]: {DateTime.Now}");
+        
         Console.WriteLine("Server started and logged in the file.");
     }
-
+//Creates and starts a specific number of computers logging each one of them
 
     public static void StartComputers(int count) {
         for (int i = 0; i < count; i++) {
             var biosName = "comp" + i.ToString();
             var ipAddress = "10.0.192." + getNum();
-            network.Add(new Computer(biosName, ipAddress));
+            network.Add(new Computer("Default", biosName, ipAddress));
+            //network.Add(new Server("Computer", biosName, ipAddress, "General Purpose"));
             log.WriteLine($"[Computer Started]: BiosName: {biosName}, IpAddress: {ipAddress}, Time: {DateTime.Now}");
             
         }
         Console.WriteLine($"{count} Computers added.");
     }
+//Displays the information about the devices in the network which have been previously started
 
     public static void DisplayComputers() {
         foreach (var computer in network) {
+            // Type = type = comp.GetType();
+            //Console.Written(Type);
+            // string stringType =  type.ToString();
+            if (computer is Server server) {
+                server.ShowInfo();
+                Console.WriteLine($"\tType: {server.Type}");
+            }
+            else{
             computer.ShowInfo();
+            }
+            // if(stringType == "Server")
+               // {
+               // Server serv = (Server) comp  CASTING
+               // System.Console.WriteLine("\t{0}", serv.kindofserver) 
+               // }
         }
     }
 
+//Shuts down a specific computer by itś IP address
 
     public static void ShutDownComputer(string ipAddress) {
         bool found = false;
@@ -56,6 +80,7 @@ public class Program {
             if (computer.IpAddress == ipAddress) {
                 computer.ShutDown();
                 log.WriteLine($"[Computer Shut Down]: IpAddress: {ipAddress}, Time: {DateTime.Now}");
+            
                 Console.WriteLine($"Computer {ipAddress} shut down.");
                 found = true;
                 break;
@@ -66,24 +91,26 @@ public class Program {
         }
     }
 
+//Shuts down all computers in the network
 
     public static void ShutDownAllComputers() {
         foreach (var computer in network) {
             computer.ShutDown();
             log.WriteLine($"[All Computers Shut Down]: Time: {DateTime.Now}");
+            
         }
         Console.WriteLine("All computers have been shut down.");
     }
 
-
+//Flushes the log to ensure all data is saved 
     public static void SeeLog() {
-        log.Flush();                                        // To make sure everything is written in log
+        log.Flush();                                        
         Console.WriteLine("Log saved to 'log.txt'.");
     }
 
     public static void Main() {
         // Initialize log
-        log = File.CreateText("log.txt");
+        log = File.AppendText("log.txt");
 
         bool on = true;
         while (on) {
@@ -137,8 +164,8 @@ public class Program {
                     break;
             }
         }
-
-        // Close log
+        log.Flush();
+        // Close log file before exiting
         log.Close();
     }
 }

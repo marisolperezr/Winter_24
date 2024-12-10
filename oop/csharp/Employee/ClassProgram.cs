@@ -2,104 +2,10 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-
-class ReadCsv
-{
-    public static List<string[]> ReadCsvFile(string filePath)
-    {
-        List<string[]> rows = new List<string[]>();
-
-        try
-        {
-            // Read all lines from the CSV file
-            string[] lines = File.ReadAllLines(filePath);
-
-            // Process each line and split by the comma to get individual values
-            foreach (string line in lines)
-            {
-                string[] values = line.Split(',');
-
-                // Add the values to the list of rows
-                rows.Add(values);
-            }
-
-            Console.WriteLine("CSV file read successfully!");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-        }
-
-        return rows;
-    }
-}
-
-public class Employee
-{
-    public int ID { 
-        get; 
-        set; 
-        }
-    public string Name { get; set; }
-    public string Department { get; set; }
-
-    public Employee(int id, string name, string department)
-    {
-        ID = id;
-        Name = name;
-        Department = department;
-    }
-}
-
-public class Incomes
-{
-    public int ID { 
-        get; 
-        set; 
-    }
-    public string Month { 
-        get; 
-        set; 
-    }
-    public int Year { 
-        get; 
-        set; 
-    }
-    public double Income { 
-        get; 
-        set; 
-    }
-
-    public Incomes(int id, string month, int year, double income)
-    {
-        ID = id;
-        Month = month;
-        Year = year;
-        Income = income;
-    }
-}
-
-public class Manager{
-    public string Name{
-        get;
-        set;
-    }
-    public Manager(string name){
-        Name = name;
-    }
-
-    public void Hire(string name, double income, string department, string month, int year, List<Employee> employees, List<Incomes> incomes){
-        int newid = employees.Count +1;       //ask
-        Employee newEmployee = new Employee (newid, name, department);
-
-        employees.Add(newEmployee);
-        Incomes newIncome = new Incomes (newid, month, year, income);
-        incomes.Add(newIncome);
-
-        Console.WriteLine($"Employee {newEmployee.Name} was hired successfully");
-
-    }
-}
+using library_Manager;
+using library_Incomes;
+using library_Readcsv;
+using library_Employee;
 
 class Program
 {

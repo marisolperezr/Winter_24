@@ -76,7 +76,7 @@ namespace compLibs
         {
             IpAddress = null;
             Console.WriteLine("**************** !!!! **************");
-            Console.WriteLine("Are you sure you want to shut down this server? (YES/n)");
+            Console.WriteLine($"Are you sure you want to shut down this device:{IpAddress} ? (YES/n)");
             string confirm = Console.ReadLine();
             if (confirm == "YES"){
                 Console.WriteLine("The comp {0} is shutting down !!!", this._name);

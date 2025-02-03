@@ -67,4 +67,12 @@ namespace compLibs.Servers
             Console.WriteLine($"Server of type {_type} strated with IP: {_ipadress}");
         }
     }
+
+    public class WebServer : Server
+    {
+        public WebServer(string name, string biosName, string ipAdress, string type)
+            : base(name, biosName, ipAdress, type)
+        {
+        }
+    }   
 }

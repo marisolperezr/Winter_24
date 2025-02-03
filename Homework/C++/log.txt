@@ -1,0 +1,18 @@
+[Server Started]: Name: G, BIOS: GG, IP: 10.0.192.130, Type: GGG, Time: 1738242727
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.232, Time: 1738242731
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.10, Time: 1738242731
+[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.196, Time: 1738242731
+[Computer Started]: BiosName: comp3, IpAddress: 10.0.192.45, Time: 1738242731
+[Computer Started]: BiosName: comp4, IpAddress: 10.0.192.106, Time: 1738242731
+[Computer Shut Down]: IpAddress: 10.0.192.196, Time: 1738242748
+[All Computers Shut Down]: Time: 1738242758
+[All Computers Shut Down]: Time: 1738242758
+[All Computers Shut Down]: Time: 1738242758
+[All Computers Shut Down]: Time: 1738242758
+[All Computers Shut Down]: Time: 1738242758
+[All Computers Shut Down]: Time: 1738242758
+[Server Shut Down ]: 1738242768
+[Program Terminated]: 1738242779
+[Server Started]: Name: jj+, BIOS: j, IP: 10.0.192.130, Type: j4, Time: 1738338603
+[Program Terminated]: 1738338605
+[Program Terminated]: 1738339241

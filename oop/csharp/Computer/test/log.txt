@@ -1,21 +1,84 @@
-[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.246, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.195, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.158, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp3, IpAddress: 10.0.192.31, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp4, IpAddress: 10.0.192.40, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp5, IpAddress: 10.0.192.68, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp6, IpAddress: 10.0.192.231, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp7, IpAddress: 10.0.192.141, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp8, IpAddress: 10.0.192.85, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp9, IpAddress: 10.0.192.236, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp10, IpAddress: 10.0.192.171, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp11, IpAddress: 10.0.192.36, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp12, IpAddress: 10.0.192.151, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp13, IpAddress: 10.0.192.62, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp14, IpAddress: 10.0.192.163, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp15, IpAddress: 10.0.192.71, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp16, IpAddress: 10.0.192.167, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp17, IpAddress: 10.0.192.178, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp18, IpAddress: 10.0.192.232, Time: 12/4/2024 2:38:08 PM
-[Computer Started]: BiosName: comp19, IpAddress: 10.0.192.173, Time: 12/4/2024 2:38:08 PM
-[Program Terminated]: 12/4/2024 2:38:10 PM
+[Server Started]: 1/30/2025 12:17:36 PM
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.42, Time: 1/30/2025 12:17:42 PM
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.160, Time: 1/30/2025 12:17:42 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:17:59 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:18:04 PM
+[Program Terminated]: 1/30/2025 12:18:39 PM
+[Server Started]: 1/30/2025 11:46:07 AM
+[Program Terminated]: 1/30/2025 11:46:21 AM
+[Server Started]: Name: marisol, BIOS: hola, IP: 10.0.192.138, Type: 4, Time: 1/30/2025 12:06:35 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:06:48 PM
+[Server Shut Down ]: 1/30/2025 12:06:51 PM
+[Program Terminated]: 1/30/2025 12:09:41 PM
+[Server Started]: Name: test, BIOS: test, IP: 10.0.192.71, Type: test, Time: 1/30/2025 12:09:55 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:10:16 PM
+[Server Shut Down ]: 1/30/2025 12:12:16 PM
+[Program Terminated]: 1/30/2025 12:12:17 PM
+[Server Started]: Name: a, BIOS: a, IP: 10.0.192.196, Type: a, Time: 1/30/2025 12:12:33 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:12:41 PM
+[Server Shut Down ]: 1/30/2025 12:12:43 PM
+[Program Terminated]: 1/30/2025 12:16:56 PM
+[Server Started]: Name: AS, BIOS: AS, IP: 10.0.192.251, Type: AS, Time: 1/30/2025 12:18:12 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:18:22 PM
+[Server Shut Down ]: 1/30/2025 12:18:30 PM
+[Program Terminated]: 1/30/2025 12:20:06 PM
+[Server Started]: Name: test, BIOS: test, IP: 10.0.192.7, Type: test, Time: 1/30/2025 12:25:01 PM
+[All Computers Shut Down]: Time: 1/30/2025 12:25:07 PM
+[Server Shut Down ]: 1/30/2025 12:25:12 PM
+[Program Terminated]: 1/30/2025 12:59:41 PM
+[Server Started]: Name: Prueba, BIOS: Prueba, IP: 10.0.192.18, Type: Prueba, Time: 1/30/2025 12:59:55 PM
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.243, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.232, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.209, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp3, IpAddress: 10.0.192.190, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp4, IpAddress: 10.0.192.246, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp5, IpAddress: 10.0.192.11, Time: 1/30/2025 1:00:08 PM
+[Computer Started]: BiosName: comp6, IpAddress: 10.0.192.150, Time: 1/30/2025 1:00:08 PM
+[Computer Shut Down]: IpAddress: 10.0.192.150, Time: 1/30/2025 1:00:39 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:01:26 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:01:34 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:01:36 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:01:38 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:01:40 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:02:09 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:02:11 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:02:11 PM
+[Program Terminated]: 1/30/2025 1:02:45 PM
+[Program Terminated]: 1/30/2025 1:04:25 PM
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.232, Time: 1/30/2025 1:05:01 PM
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.26, Time: 1/30/2025 1:05:01 PM
+[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.23, Time: 1/30/2025 1:05:01 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:05:13 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:05:19 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:05:22 PM
+[Program Terminated]: 1/30/2025 1:06:44 PM
+[Computer Started]: BiosName: comp0, IpAddress: 10.0.192.130, Time: 1/30/2025 1:06:54 PM
+[Computer Started]: BiosName: comp1, IpAddress: 10.0.192.224, Time: 1/30/2025 1:06:54 PM
+[Computer Started]: BiosName: comp2, IpAddress: 10.0.192.35, Time: 1/30/2025 1:06:54 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:00 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:02 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:04 PM
+[Server Started]: Name: Lola, BIOS: Lola, IP: 10.0.192.17, Type: Lola, Time: 1/30/2025 1:07:33 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:41 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:43 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:44 PM
+[All Computers Shut Down]: Time: 1/30/2025 1:07:45 PM
+[Server Shut Down ]: 1/30/2025 1:07:46 PM
+[Program Terminated]: 1/30/2025 1:08:25 PM
+[Server Started]: Name: A, BIOS: AA, IP: 10.0.192.240, Type: AAA, Time: 1/30/2025 1:08:34 PM
+[Server Shut Down ]: 1/30/2025 1:08:43 PM
+[Program Terminated]: 1/30/2025 1:09:20 PM
+[Server Started]: Name: B, BIOS: BB, IP: 10.0.192.167, Type: BBB, Time: 1/30/2025 1:09:29 PM
+[Program Terminated]: 1/30/2025 1:10:24 PM
+[Server Started]: Name: C, BIOS: CC, IP: 10.0.192.26, Type: CCC, Time: 1/30/2025 1:10:35 PM
+[Server Shut Down ]: 1/30/2025 1:10:46 PM
+[Program Terminated]: 1/30/2025 1:11:46 PM
+[Server Started]: Name: D, BIOS: DD, IP: 10.0.192.228, Type: DDD, Time: 1/30/2025 1:11:54 PM
+[Server Shut Down ]: 1/30/2025 1:11:57 PM
+[Program Terminated]: 1/30/2025 1:12:47 PM
+[Server Started]: Name: E, BIOS: EE, IP: 10.0.192.182, Type: EEE, Time: 1/30/2025 1:12:55 PM
+[Server Shut Down ]: 1/30/2025 1:12:58 PM
+[Program Terminated]: 1/30/2025 1:13:41 PM
+[Server Started]: Name: F, BIOS: FF, IP: 10.0.192.71, Type: FFF, Time: 1/30/2025 1:13:48 PM
+[Server Shut Down ]: 1/30/2025 1:13:52 PM
+[Program Terminated]: 1/30/2025 1:39:27 PM

@@ -33,10 +33,30 @@ public class Program {
 //Logs the start of the server and displays a message
 
     public static void StartServer() {
-        log.WriteLine($"[Server Started]: {DateTime.Now}");
+        //log.WriteLine($"[Server Started]: {DateTime.Now}");
         
-        Console.WriteLine("Server started and logged in the file.");
-    }
+        //Console.WriteLine("Server started and logged in the file.");
+        Console.WriteLine("Enter the server name:");
+        string serverName = Console.ReadLine();
+    
+        Console.WriteLine("Enter the BIOS name:");
+        string biosName = Console.ReadLine();
+    
+        Console.WriteLine("Enter the server type:");
+        string serverType = Console.ReadLine();
+
+        string ipAddress = "10.0.192." + getNum(); // Generar una IP única
+
+        Server newServer = new WebServer(serverName, biosName, ipAddress, serverType);
+        network.Add(newServer); // Agregar el servidor a la lista
+
+        log.WriteLine($"[Server Started]: Name: {serverName}, BIOS: {biosName}, IP: {ipAddress}, Type: {serverType}, Time: {DateTime.Now}");
+        log.Flush();
+
+    Console.WriteLine($"Server '{serverName}' started with IP {ipAddress}.");   
+}
+
+    
 //Creates and starts a specific number of computers logging each one of them
 
     public static void StartComputers(int count) {
@@ -107,6 +127,43 @@ public class Program {
         log.Flush();                                        
         Console.WriteLine("Log saved to 'log.txt'.");
     }
+//Shuts down the server shutting all computers before
+    public static void ShutDownServer(){
+        Console.WriteLine("*******!********");
+        Console.WriteLine("Do you want to shut down the server? (YES/n)");
+        string confirm = Console.ReadLine();
+
+        if (confirm == "YES"){
+            Console.WriteLine("Shuttind down server...");
+
+            //shutting down computers before shutting down the server
+            //ShutDownAllComputers();
+
+            Server serverToShutDown = null;
+            foreach (var device in network){
+                if (device is Server server) {
+                    serverToShutDown = server;
+                    break;
+                }
+            }
+
+            if ( serverToShutDown != null){
+                //serverToShutDown.ShutDown();
+                log.WriteLine($"[Server Shut Down ]: {DateTime.Now}");
+                log.Flush();
+                Console.WriteLine($"Server {serverToShutDown.BiosName} has been shut down");
+
+                network.Remove(serverToShutDown);
+
+                if (network.Find(device => device is Server) != null){
+                   Console.WriteLine("No active server found in the network");
+                } 
+            } else {
+            Console.WriteLine("Server shutdown canceled");
+             }
+        }
+    }
+
 
     public static void Main() {
         // Initialize log
@@ -152,7 +209,7 @@ public class Program {
                     SeeLog();
                     break;
                 case "7":
-                    Console.WriteLine("This method is not available yet.");
+                    ShutDownServer();
                     break;
                 case "8":
                     on = false;
